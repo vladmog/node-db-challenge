@@ -14,6 +14,7 @@ exports.up = function(knex) {
         tbl 
             .bool('project_completed')
             .notNullable()
+            .defaultTo(false)
     })
 
     //Resources table
@@ -39,6 +40,7 @@ exports.up = function(knex) {
         tbl 
             .bool('task_completed')
             .notNullable()
+            .defaultTo(false)
         tbl
             .integer('project_id')
             .unsigned()
