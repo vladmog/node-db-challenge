@@ -53,7 +53,7 @@ exports.up = function(knex) {
     //Project resources table
     .createTable('project_resources', tbl => {
         tbl.increments();
-        tbl
+        tbl 
             .integer('project_id')
             .unsigned()
             .notNullable()
