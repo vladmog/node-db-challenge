@@ -1,3 +1,4 @@
+
 const knex = require('knex');
 const config = require('../knexfile');
 const db = knex(config.development);
@@ -12,6 +13,13 @@ function find(){
     return db('projects')
 }
 
+function ioToBool(obj){
+    return {
+        ...obj,
+        project_completed: obj.project_completed ? true : false
+    }
+}
+
 function findById(id){
     return db('projects')
     .where({ id: id})
@@ -24,5 +32,11 @@ function add(project){
         .then(([id]) => {
             return findById(id)
         })
+    .then((obj) => {
+        return ioToBool(obj)
+    }) 
 }
+
+
+
 
