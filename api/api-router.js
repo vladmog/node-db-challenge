@@ -1,11 +1,13 @@
 const express = require('express');
 
-const RecipesRouter = require('../recipes/recipes-router');
-const IngredientsRouter = require('../ingredients/ingredients-router');
+const ProjectsRouter = require('../projects/projects-router');
+const ResourcesRouter = require('../resources/resources-router');
+const TasksRouter = require('../tasks/tasks-router');
 
 const router = express.Router();
 
-router.use('/projects', RecipesRouter)
-router.use('/ingredients', IngredientsRouter)
+router.use('/projects', ProjectsRouter)
+router.use('/resources', ResourcesRouter)
+router.use('/tasks', TasksRouter)
 
 module.exports = router;
